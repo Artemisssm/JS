@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 表单提交的类型默认都是字符串型所以要进行字符转换
+/*     let num = prompt('请输入第一个数')
+    console.log(typeof num); */
+
+    // 隐式转换
+    // +两边有一个是字符串就会把另一个也变成字符串
+    console.log(1+1);
+    console.log('pink'+1);
+    // 除了+之外的运算符，都会把数据转成数字类型
+    console.log(2+'2');
+    console.log(2-'2');
+    console.log(+12);
+    console.log(+'123');//将字符串转换为数字型
+
+    // 显示转换,强制转换
+    let str = '123'
+    console.log(Number(str));
+    let num
+    num = prompt('请输入你的年薪')
+    console.log(Number(num));
+
+    // NaN也是数字类型，只不过表示的非数字
+
+    // 将字符串转换成数字型
+    console.log(parseInt('12px'));
+    console.log(parseInt('12.34px'));
+    console.log(parseFloat('12.34px'));
+  </script>
+</body>
+</html>
