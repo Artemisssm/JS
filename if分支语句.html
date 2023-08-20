@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 除了0其余所有的数字都是true
+/*     if (2) {
+      console.log('执行语句');
+    }
+    // 除了空字符串都为真
+    if ('lzx') {
+      console.log('zhixing');
+    }
+    else{
+      console.log(xunwei);
+    } */
+    let uname = prompt('用户名')
+    let pwd = prompt('密码')
+    if (uname === 'pink' && pwd === '123456') {
+      alert('登陆成功')
+    } else {
+      alert('登录失败')
+    }
+
+    // 多分支语句
+    let score = prompt('成绩')
+    if (score>90) {
+      alert('youxiu')
+    }else if(score>=70){
+      alert('lianghao')
+    }else if(score>=60){
+      alert('putong')
+    }else{
+      alert('qusi')
+    }
+  </script>
+</body>
+</html>
