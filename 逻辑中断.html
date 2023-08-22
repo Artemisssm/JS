@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn(x = 0, y = 0) {
+      // 如果不给默认参数则可以如下这样写
+      x = x || 0
+      y = y || 0
+      console.log(x + y);
+      // 后边的3+5不在执行，前边是错的后边的不在执行称为逻辑中断
+      console.log(false && 3 + 5);
+      // 若两边都是真的则执行后边的
+      console.log(11 && 22);
+      // 输出第一个遇到的值
+      console.log(11 || 22);
+    }
+    fn(1, 2)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.函数表达式
+    let fn = function () {
+      console.log('我是函数表达式');
+    }
+    fn()
+    // 具名函数可以使用在任何位置
+    // 匿名函数需要先定义在调用
+
+    let num = 10
+    let num2 = 20
+      // 立即执行函数，多个立即执行函数之间需要用分号隔开
+      // 第二个小括号相当于调用函数需要传入实参数
+      (function () {
+        console.log('10');
+      })();
+    // 第二种写法
+    (function (x, y) {
+      console.log(x + y);
+    }(1, 3))
+  </script>
+</body>
+
+</html>

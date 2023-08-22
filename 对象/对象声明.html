@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let pink = {
+      name: 'pink',
+      age: 18,
+      gender: `女`,
+
+      sayHi:function() {
+        document.write(pink.name)
+      }
+    }
+    console.log(pink);
+    // 对象的增删改查
+    console.log(pink.age);
+    // 改
+    pink.gender = '男'
+    console.log(pink);
+    // 新增
+    pink.hobby = '足球'
+    console.log(pink);
+    // 删除
+    delete pink.age
+    console.log(pink);
+    // 查的另外一种方法,注意这种的属性名需要添加单引号
+    console.log(pink['name']);
+    pink.sayHi()
+
+    // 遍历对象
+    for (const i in pink) {
+      // 输出的属性名
+      console.log(i);
+      // 输出属性对应的值
+      console.log(pink[i]);
+    }
+  </script>
+</body>
+
+</html>
