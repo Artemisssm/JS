@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<div class="box">123</div>
+<div class="box">abc</div>
+<p id="nav">导航栏</p>
+<ul>
+  <li>ceshi</li>
+  <li>ceshi2</li>
+  <li>ceshi3</li>
+</ul>
+
+  <script>
+    // 所有选择器必须加引号
+    // 获取第一个div
+    // const box=document.querySelector('div')
+    const box=document.querySelector('.box')
+    const nav=document.querySelector('#nav')
+
+
+    // 改变选取对象中的属性
+    nav.style.color = 'red'
+
+    // 获取第一个li
+    const li=document.querySelector('ul li:first-child')
+    // 返回值是CSS匹配的第一个元素，没有匹配到返回null
+
+
+    // 返回多个对象，是一个数组,需要遍历才可以修改其中的值
+    // 得到的是一个伪数组，没有pop或者push方法
+    const lis = document.querySelectorAll('ul li')
+    for (let index = 0; index < lis.length; index++) {
+      console.log(lis[index]);
+    }
+
+    console.log(box);
+    console.log(nav);
+    console.log(li);
+    console.log(lis);
+  </script>
+</body>
+
+</html>

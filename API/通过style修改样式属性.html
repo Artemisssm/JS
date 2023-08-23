@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+
+
+  <script>
+    const div = document.querySelector('div')
+    // 注意是字符串,注意加CSS的单位
+    div.style.width = '300px'
+    // 带有短横线则用小驼峰命名法
+    div.style.backgroundColor='blue'
+  </script>
+</body>
+
+</html>

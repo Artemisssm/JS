@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- 例如网页中的倒计时 -->
+
+  <script>
+    // setInterval(函数，间隔时间)
+    // 里边是一个匿名函数
+    // 每个定时器都有一个独一无二的序号
+    // 返回的是一个数字型
+    /*     let n = setInterval(() => {
+          console.log('一秒执行一次');
+        }, 1000);
+        console.log(n);
+    
+        // 关闭定时器
+        clearInterval(n) */
+    let i = 1
+    setInterval(() => {
+      i++
+      document.write(`${i} `)
+    }, 1000);
+  </script>
+</body>
+
+</html>
