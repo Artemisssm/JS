@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .dad{
+      width: 400px;
+      height: 400px;
+      background-color: pink;
+    }
+    .baby{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+<div class="dad">
+  <div class="baby"></div>
+</div>
+
+  <script>
+const dad=document.querySelector('.dad')
+const baby=document.querySelector('.baby')
+dad.addEventListener('mouseover',function name(params) {
+  console.log('鼠标经过');
+})
+// 此时经过孩子的时候会有鼠标的经过或者离开
+dad.addEventListener('mouseout',function name(params) {
+  console.log('鼠标离开');
+})
+// 因此推荐使用mouseleave
+  </script>
+</body>
+
+</html>

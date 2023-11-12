@@ -133,6 +133,34 @@
     text.addEventListener('input', function name(params) {
       total.innerHTML = `${text.value.length}/200字`
     })
+
+    const btn = document.querySelector('button')
+    const item = document.querySelector('.item')
+    const tex = document.querySelector('.text')
+    const time = document.querySelector('.time')
+    text.addEventListener('keyup', function name(params) {
+      if (params.key === 'Enter') {
+        // 先判断输入的文本在去除掉空格之后是否是空的内容
+        if (text.value.trim()) {
+          item.style.display = 'block'
+          // 去除两侧的空格
+          tex.innerHTML = text.value
+          time.innerHTML = getData(Date.now())
+        }
+        text.value = ''
+      }
+    })
+
+
+
+    // 将时间戳转换为标准时间
+    function getData(n) {
+      let now = new Date(n),
+        y = now.getFullYear(),
+        m = now.getMonth() + 1,
+        d = now.getDate();
+      return y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
+    }
   </script>
 </body>
 

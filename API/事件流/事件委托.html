@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <p>你好</p>
+  </ul>
+
+  <script>
+    // 点击当前的li文字变红
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function name(params) {
+      alert(11)
+      // 通过事件对象拿到点击的li
+      // params.targe就是点击的对象
+      // 只要点击的li才有效果
+      // 找到真正的触发的元素
+      if (params.target.tagName === 'LI') {
+        params.target.style.color = 'red'
+      }
+    })
+  </script>
+</body>
+
+</html>

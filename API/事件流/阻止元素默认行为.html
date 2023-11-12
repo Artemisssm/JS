@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="http://itcast.cn">
+    <input type="submit" name="" id="" value="免费注册">
+  </form>
+  <a href="http://www.baidu.com">百度一下</a>
+  <script>
+    const form = document.querySelector('form')
+    form.addEventListener('submit', function name(params) {
+      // 阻止默认行为
+      params.preventDefault()
+    })
+
+    const a=document.querySelector('a')
+    a.addEventListener('click',function name(params) {
+      // 阻止默认行为
+      params.preventDefault()
+    })
+  </script>
+</body>
+
+</html>

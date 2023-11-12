@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    // 等待页面所有的资源加载完毕，则执行回调函数
+    // js写在前边需要加的
+/*     window.addEventListener('click', function name(params) {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function name(params) {
+        alert('1')
+      })
+    }) */
+
+    // 等dom的资源加载完毕就执行
+    document.addEventListener('DOMContentLoaded',function name(params) {
+      const btn = document.querySelector('button')
+      btn.addEventListener('click', function name(params) {
+        alert('1')
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button>点击</button>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
