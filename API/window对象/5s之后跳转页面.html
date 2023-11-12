@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <a href="http://www.baidu.com">支付成功，<span>5</span>秒之后跳转</a>
+    <button class="reload">刷新</button>
+    <script>
+        const a = document.querySelector('a')
+        let num = 5
+        setInterval(() => {
+            num--
+            a.innerHTML = `支付成功，<span>${num}</span>秒之后跳转`
+            // 时间到达后跳转
+            if (num === 0) {
+                location.href = 'http://www.baidu.com'
+            }
+        }, 1000);
+
+        // 点击刷新页面
+        const reload = document.querySelector('.reload')
+        reload.addEventListener('click', () => {
+            // 用true表示强制刷新
+            location.reload(true)
+        })
+
+        // 拿到？后边的值
+        console.log(location.search);
+
+        // 拿到#后边的值
+        console.log(location.hash);
+    </script>
+</body>
+
+</html>

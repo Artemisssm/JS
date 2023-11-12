@@ -1259,8 +1259,8 @@
       const list = document.querySelector('.xtx-elevator-list')
       list.addEventListener('click', function name(params) {
         // 判断是否点击的是超链接
-        // 处理一开始就没有高亮但是点击需要产生高亮度额情况
-        if (params.target.tagName === 'A') {
+        // 处理一开始就没有高亮但是点击需要产生高亮度额情况,要满足也有自定义属性
+        if (params.target.tagName === 'A' && params.target.dataset.name) {
           // 先获取这个类名
           const old = document.querySelector('.xtx-elevator-list .active')
           // 判断是不是有如果有则移除
@@ -1271,11 +1271,40 @@
         // 根据小盒子的自定义属性选择大盒子
         // 获得对应大盒子的offseTop值
         const top = document.querySelector(`.xtx_goods_${params.target.dataset.name}`).offsetTop
-        // 让页面滚动到对应的位置,等号左边就是拿到页面滚动的距离
+        // 让页面滚动到对应的位置,等号左边就是拿到页面滚动的距离（只要让页面滚动起来就是这句）
         document.documentElement.scrollTop = top
+      })
+
+      // 页面滚动可以根据大盒子选中小盒子
+      window.addEventListener('scroll', function name(params) {
+        const old = document.querySelector('.xtx-elevator-list .active')
+
+        if (old) old.classList.remove('active')
+        // 判断页面当前滑动的位置选择小盒子
+        const news = document.querySelector('.xtx_goods_new')
+        const popular = document.querySelector('.xtx_goods_popular')
+        const brand = document.querySelector('.xtx_goods_brand')
+        const topic = document.querySelector('.xtx_goods_topic')
+        const n = document.documentElement.scrollTop
+        if (n >= news.offsetTop && n <= popular.offsetTop) {
+          // 选择小盒子
+          document.querySelector('[data-name=new]').classList.add('active')
+        } else if (n >= popular.offsetTop && n <= brand.offsetTop) {
+          document.querySelector('[data-name=popular]').classList.add('active')
+        } else if (n >= brand.offsetTop && n <= topic.offsetTop) {
+          document.querySelector('[data-name=brand]').classList.add('active')
+        } else if (n >= topic.offsetTop) {
+          document.querySelector('[data-name=topic]').classList.add('active')
+        }
 
 
       })
+      // 先移除类
+
+
+
+
+
     })();
   </script>
 </body>

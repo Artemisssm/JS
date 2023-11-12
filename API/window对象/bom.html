@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        document.querySelector('body') = window.document.querySelector('body')
+
+        function fn(params) {
+            console.log(1);
+        }
+        window.fn = fn
+
+        const num = 1
+        window.num = num
+        // 默认挂在在window上的属性
+    </script>
+</body>
+
+</html>

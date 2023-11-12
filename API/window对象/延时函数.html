@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 延迟多少秒之后执行,只执行一次
+
+        let timer = setTimeout(() => {
+            console.log(1);
+        }, 3000);
+
+        // 清除延迟执
+        // 每次调用setTimeout()方法都会返回一个唯一的ID值，可以通过clearTimeout()方法来清除延迟执行的方法
+        clearTimeout(timer)
+    </script>
+</body>
+
+</html>

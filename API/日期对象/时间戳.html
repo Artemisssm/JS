@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // 1获取时间戳的三种方式
+
+    const date = new Date();
+    console.log(date.getTime());
+
+    // 把时间的字符串转换成数字型
+    console.log(+new Date());
+
+    // 只能得到当前的时间戳
+    console.log(Date.now());
+
+    // 得到某一时间的时间戳
+    console.log(+new Date('2024-4-1 18:30:00'));
+
+    // 我要根据日期Day() 返回的是星期一
+    const arr = ['星期天', '星期一', '星期二','星期三','星期四','星期五','星期六']
+    console.log(arr[new Date().getDay()]);
+
+  </script>
+</body>
+
+</html>
+
+
+
+
+'
+'0
+'jhjijjljnhkl'

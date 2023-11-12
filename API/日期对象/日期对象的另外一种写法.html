@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid pink;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div></div>
+
+  <script>
+    function getMydata(params) {
+      const data = new Date() 
+      let h = data.getHours()
+      h = h < 10 ? '0' + h : h
+      let m = data.getMinutes()
+      m = m < 10 ? '0' + m : m
+      let s = data.getSeconds()
+      s = s < 10 ? '0' + s : s
+      return `今天是${data.getFullYear()}年${data.getMonth() + 1}月${data.getDate()}号 ${h}:${m}:${s}`
+    }
+    // 获得日期对象,外边显示一个，里边显示一个
+    const data = new Date()
+    const div = document.querySelector('div')
+    // 直接调用方法得到时间
+    // div.innerHTML = data.toLocaleString() //2023/10/4 21:27:45
+    setInterval(function name(params) {
+      const data = new Date()
+      div.innerHTML = data.toLocaleString()
+    },1000)
+    // 只得到年月日
+    // div.innerHTML = data.toLocaleDateString()
+    // 只获得当前的时间
+    // div.innerHTML = data.toLocaleTimeString()
+  </script>
+</body>
+
+</html>

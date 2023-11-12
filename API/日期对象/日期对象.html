@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid pink;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div></div>
+
+  <script>
+    function getMydata(params) {
+      const data = new Date() 
+      let h = data.getHours()
+      h = h < 10 ? '0' + h : h
+      let m = data.getMinutes()
+      m = m < 10 ? '0' + m : m
+      let s = data.getSeconds()
+      s = s < 10 ? '0' + s : s
+      return `今天是${data.getFullYear()}年${data.getMonth() + 1}月${data.getDate()}号 ${h}:${m}:${s}`
+    }
+    // 获得日期对象
+    const data = new Date()
+    const div = document.querySelector('div')
+    // 使用其中的方法
+    console.log(data.getFullYear());
+    // 得到月份之后+1
+    console.log(data.getMonth() + 1);
+    console.log(data.getDate());
+    // 返回星期几，星期日返回的是0
+    console.log(data.getDay());
+
+    // 显示当前的时间
+    
+
+
+
+    // 返回指定的时间,用于页面的倒计时
+    const data1 = new Date('2022-5-1 08:30:00')
+    console.log(data1);
+
+    // 放入定时器动态的显示时间，回调函数是等了一秒钟后再执行，因此需要先写一个
+    div.innerHTML = getMydata()
+    setInterval(function name(params) {
+      div.innerHTML = getMydata()
+    }, 1000)
+  </script>
+</body>
+
+</html>
