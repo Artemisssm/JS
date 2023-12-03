@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 定义一个人的构造函数
+        // const Person = {
+        //     name: 'zs',
+        //     age: 18,
+        // }
+        function person(params) {
+            this.name = 'zs'
+            this.age = 18
+        }
+        function women(name, age) {
+
+
+        }
+
+        // 通过原型继承person
+        women.prototype = new person()
+        // 指回原来的构造函数
+        women.prototype.constructor = women
+
+        // 添加单独的方法
+        women.prototype.baby = function () {
+            console.log('hello');
+        }
+        const red = new women()
+        console.log(red);
+        console.log(women.prototype);
+
+        function man(params) {
+            
+
+        }
+
+        man.prototype = new person()
+        man.prototype.constructor = man
+
+        const fr = new man()
+
+    </script>
+</body>
+
+</html>

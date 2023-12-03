@@ -1,0 +1,32 @@
+<!-- FILEPATH: /C:/Users/26514/Desktop/code/JS/API/本地存储/sessionStorage存储.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>sessionStorage存储</title>
+</head>
+
+<body>
+    <h1>sessionStorage存储</h1>
+    <p>请在输入框中输入一些文本，然后点击“保存”按钮。</p>
+    <input type="text" id="input">
+    <button onclick="saveData()">保存</button>
+    <p id="output"></p>
+
+    <script>
+        function saveData() {
+            var input = document.getElementById("input").value;
+            sessionStorage.setItem("data", input);
+            document.getElementById("output").innerHTML = "已保存：" + input;
+        }
+
+        var data = sessionStorage.getItem("data");
+        if (data) {
+            document.getElementById("output").innerHTML = "已保存：" + data;
+        }
+    </script>
+</body>
+
+</html>

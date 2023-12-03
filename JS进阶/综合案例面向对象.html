@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>面向对象封装消息提示</title>
+  <style>
+    .modal {
+      width: 300px;
+      min-height: 100px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background-color: #fff;
+    }
+
+    .modal .header {
+      line-height: 40px;
+      padding: 0 10px;
+      position: relative;
+      font-size: 20px;
+    }
+
+    .modal .header i {
+      font-style: normal;
+      color: #999;
+      position: absolute;
+      right: 15px;
+      top: -2px;
+      cursor: pointer;
+    }
+
+    .modal .body {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .modal .footer {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .modal .footer a {
+      padding: 3px 8px;
+      background: #ccc;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 2px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .modal .footer a.submit {
+      background-color: #369;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="delete">删除</button>
+  <button id="login">登录</button>
+
+  <!-- <div class="modal">
+    <div class="header">温馨提示 <i>x</i></div>
+    <div class="body">您没有删除权限操作</div>
+  </div> -->
+
+
+  <script>
+    // 构造函数里面需要要用this创建
+    function model(title, content) {
+        // 重建div标签
+        this.modelbox = document.createElement('div')
+
+        // 给div标签添加类名
+        this.modelbox.className = 'modal'
+
+        // 添加内容
+        this.modelbox.innerHTML = `
+        <div class="header">${title} <i>x</i></div>
+        <div class="body">${content}</div>`
+
+        console.log(this.modelbox);
+    }
+
+    // new model('温馨提示', '您没有删除权限操作')
+    // new model('温馨提示', '您没有登录权限操作')
+
+    // 关闭的事件需要写到open里面
+    model.prototype.open = function() {
+
+        // 先检查页面上有没有modelbox
+        if (document.querySelector('.modal')) {
+            // 如果有，就删除
+            document.querySelector('.modal').remove()
+        }
+        // 注意不要用箭头函数
+        // 把创建的modelbox添加到body中
+        document.body.append(this.modelbox)
+        this.modelbox.querySelector('i').addEventListener('click', () => {
+            // 删除modelbox
+            this.close()
+        })
+    }
+
+    // 给构造函数添加close方法
+    model.prototype.close = function() {
+        // 删除modelbox
+        this.modelbox.remove()
+    }
+
+    // 点击删除按钮的时候，弹出提示框
+    document.querySelector('#delete').addEventListener('click', () => {
+        // 先要用model创建一个对象
+        const del = new model('温馨提示', '您没有删除权限操作')
+
+        del.open()
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>123</p>
+    <script>
+        // 异常处理
+        function fn(x, y) {
+            if(!x || !y) {
+                throw new Error('参数不能为空')
+            }
+
+            return x + y
+        }
+        console.log(fn());
+
+        // try catch
+        // 可能发生错误的代码放在try里面，如果发生错误，就会执行catch里面的代码
+        function name(params) {
+            try {
+                const p = document.querySelector('p')
+                p.innerHTML = '123'
+            } catch (err) {
+                console.log('出错了');
+                throw err.message
+            }
+
+            finally {
+                // 一定会执行的代码
+                console.log('finally');
+            }
+            console.log('123');
+        }
+
+    </script>
+</body>
+
+</html>

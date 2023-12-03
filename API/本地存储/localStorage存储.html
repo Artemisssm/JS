@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 存储一个键值对
+        localStorage.setItem('name', '张三');
+
+        // 读取一个键值对
+        let name = localStorage.getItem('name');
+        console.log(name);
+
+        // 删除一个键值对
+        localStorage.removeItem('name');
+
+        // 修改一个键值对
+        localStorage.setItem('name', '李四');
+
+        // 存储一个年龄
+        // 本地存储只能存储字符串
+        localStorage.setItem('age', 18);
+        console.log(localStorage.getItem('age'));
+    </script>
+</body>
+
+</html>

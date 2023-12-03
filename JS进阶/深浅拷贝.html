@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="./lodash.min.js"></script>
+    <script>
+        // 创建一个对象
+        const obj = {
+            name: '张三',
+            age: 18,
+            sayName: function () {
+                console.log(this.name);
+            }
+        }
+        // 直接复制会复制地址，不会复制值
+        const o = obj
+
+        // 浅拷贝，只会拷贝第一层，如果有多层，只会拷贝第一层，第二层及以下的还是会复制地址
+        const o1 = Object.assign({}, obj)
+        // 或者以下方法也是浅拷贝
+        Object.assign(o5, obj)
+        const o2 = { ...obj }
+        // 深拷贝
+
+        const o3 = JSON.parse(JSON.stringify(obj))
+
+        // 用递归的方式实现深拷贝,遇到复杂数据类型需要再次进行遍历
+        function deepClone(newobj, oldobj) {
+            for (let k in oldobj) {
+
+                // 处理数组的问题
+                if (oldobj[k] instanceof Array) {
+                    newobj[k] = []
+                    deepClone(newobj[k], oldobj[k])
+                    continue
+                // 处理对象的问题
+                } else if (oldobj[k] instanceof Object) {
+                    newobj[k] = []
+                    deepClone(newobj[k], oldobj[k])
+                    continue
+                }
+            }
+        }
+
+        deepClone(o, obj)
+        console.log(o);
+
+        // lodash进行深拷贝
+        const o4 = _.cloneDeep(obj)
+        console.log(o4);
+
+        // 利用json进行深拷贝
+        // 现将对象转换为字符串，再将字符串转换为对象
+        const o5 = JSON.parse(JSON.stringify(obj))
+    </script>
+</body>
+
+</html>

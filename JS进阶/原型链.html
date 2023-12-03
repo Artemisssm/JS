@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        const p1 = new Person('zs', 18);
+        console.log(p1.__proto__ === Person.prototype);
+        // 原型对象的对象原型指向的是Object.prototype
+        console.log(Person.prototype.__proto__ === Object.prototype);
+
+        // 检查是不是在原型链上
+        console.log(p1 instanceof Person);
+        console.log(p1 instanceof Object);
+        console.log(p1 instanceof Array);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr = {name: '张三', age: 18}
+
+        console.log(Object.keys(arr)); // [ 'name', 'age' ]
+        
+        console.log(Object.values(arr)); // [ '张三', 18 ]
+
+        const oo = {}
+        // 拷贝对象
+        Object.assign(oo, arr) // 被拷贝的对象在后面
+
+
+        // 内置构造函数array
+        // 数组求和
+        const arr2 = new Array(1,2,3)
+        // 没有初始值的
+        const a = arr2.reduce((pre, cur) => {
+            // pre是上一次的返回值，cur是当前值
+            return pre + cur
+        })
+
+        // 有初始值的，返回的值是初始值加上数组的和还要加上10
+        const b = arr2.reduce((pre, cur) => {
+            // pre是上一次的返回值，cur是当前值
+            return pre + cur
+        }, 10)
+
+        // 对象数组进行累加
+        const arr3 = [{price: 10, count: 1}, {price: 20, count: 2}, {price: 30, count: 3}]
+
+        // 注意初始值是0
+        const c = arr3.reduce((pre, cur) => {
+            return pre + cur.price * cur.count
+        }, 0)
+
+
+        
+    </script>
+</body>
+
+</html>

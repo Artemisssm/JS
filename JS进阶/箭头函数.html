@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 适用于本来需要匿名函数的地方
+        function name(params) {
+            console.log(123);
+        }
+        // 箭头函数
+        const name = (params) => {
+            console.log(123);
+        }
+
+        name(1)
+
+        // 只有一个形参的时候，可以省略括号
+        const name = params => {
+            console.log(123);
+        }
+
+        // 只有一行代码的时候，可以省略大括号
+        const name = params => console.log(123);
+
+        // 只有一行代码可以省略return
+        const name = params => 123;
+
+        // 箭头函数可以直接返回一个对象
+        const name = params => ({
+            a: 1
+        });
+
+
+        // 利用箭头函数来求和
+        const getSum = (...arr) => {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+            return sum
+        }
+
+        console.log(getSum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+
+        // 箭头函数的this
+        // 箭头函数没有自己的this，它的this是继承而来的
+        // this指向函数的调用者
+        // 箭头函数的this指向定义时所在的对象，而不是使用时所在的对象
+        // f2指向的是window
+        const obj = {
+            name: '张三',
+            fn: function () {
+                console.log(this);
+            },
+            fn2: () => {
+                console.log(this);
+            }
+        }
+
+        // 指向上一层作用域的this
+        const fn = () => {
+            console.log(this);
+        }
+        
+
+    </script>
+</body>
+
+</html>

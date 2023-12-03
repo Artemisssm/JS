@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const str = 'pink,red,blue,green'
+        // split方法
+        // 将字符串转换为数组
+        const arr = str.split(',')
+        console.log(arr); // [ 'pink', 'red', 'blue', 'green' ]
+
+        // 字符串的截取案例
+        const str2 = '123456789'
+        // 截取字符串
+        // substring(开始索引号[，结束索引号])
+        const a = str2.substring(1, 3)
+        console.log(a); // 23
+
+        // startWith方法
+        // 判断字符串是否以某个字符串开头
+        const b = str2.startsWith('1')
+
+        // includes方法
+        // 判断字符串中是否包含某个字符串
+        const c = str2.includes('1')
+
+
+    </script>
+</body>
+
+</html>

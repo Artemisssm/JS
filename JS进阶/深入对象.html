@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 创建对象
+        let obj = new Object({name: '张三'})
+        // 添加属性
+        // obj.name = '张三'
+
+        // 利用构造函数创建对象
+        function Person(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        // 用构造函数创建对象
+        
+        let p1 = new Person('张三', 18)
+        let p2 = new Person('李四', 20)
+        console.log(p1.name)
+
+        // 声明一个构造函数goods
+        function Goods(name, price,count) {
+            this.name = name
+            this.price = price
+            this.count = count
+        }
+
+        // 创建一个商品对象
+        let goods = new Goods('电脑', 10000, 1)
+        let goods2 = new Goods('手机', 5000, 2)
+        // 彼此独立，互不影响
+        console.log(goods === goods2);
+        console.log(goods)
+
+
+        // 静态成员和静态方法
+        function Person2(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        // 静态成员
+        Person2.info = '这是一个人类'
+        // 静态方法
+        Person2.show = function() {
+            console.log('这是一个静态方法');
+        }
+        // 只能通过构造函数调用
+        Person2.show()
+    </script>
+</body>
+
+</html>

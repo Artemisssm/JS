@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        const str = `学习前端真的很难吗？不难，只要你有一颗学习的心，就一定能学好。`;
+        // 1. 创建规则，不需要加引号
+        const reg = /前端/;
+        // 2. 使用规则，调用test方法，传入要检查的字符串
+        // 先有规则，后有字符串
+        const res = reg.test(str);
+        console.log(res);
+
+
+        // esec,返回的是一个数组，数组中存储的是匹配到的内容
+        console.log(reg.exec(str));
+    </script>
+</body>
+
+</html>

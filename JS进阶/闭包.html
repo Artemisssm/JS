@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 内层函数加外层变量
+        // 外层可以访问内层的变量
+        // 闭包会有内存泄漏的风险
+        function outer(params) {
+            let a = 10
+            function fn(params) {
+                console.log(a);
+            }
+            return fn
+        }
+
+        let fn = outer()
+        fn()
+    </script>
+</body>
+
+</html>

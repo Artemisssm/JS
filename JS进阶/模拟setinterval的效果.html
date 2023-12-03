@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div></div>
+    <script>
+        function gettime(params) {
+            document.querySelector('div').innerHTML = new Date().toLocaleString()
+            setTimeout(() => {
+                gettime()
+            }, 1000);
+        }
+        gettime()
+    </script>
+</body>
+
+</html>

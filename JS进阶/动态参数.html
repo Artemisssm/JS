@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 用动态参数获得参数数组
+        function getSum(params) {
+            let sum = 0
+            for (let i = 0; i < arguments.length; i++) {
+                sum += arguments[i]
+            }
+        }
+
+        getSum(1,2,3)
+    </script>
+</body>
+
+</html>

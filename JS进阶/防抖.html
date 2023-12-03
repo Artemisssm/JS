@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <script src="./lodash.min.js"></script>
+    <script>
+        const box = document.querySelector('.box')
+        let i = 1
+        function mousemove(params) {
+            box.innerHTML = i++
+        } 
+        // 滑动一像素就执行一次
+        box.addEventListener('mousemove',mousemove)
+
+        // 单位时间内频繁的触发只执行最后一次
+        // 防抖
+        // 利用lodash库
+        box.addEventListener('mousemove',_.debounce(mousemove,1000))
+
+        // 利用定时器实现
+        function debounce(fn, time) {
+            let timer = null
+            return function () {
+                if (timer) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(() => {
+                    fn()
+                }, time);
+            }
+        }
+        box.addEventListener('mousemove', debounce(mousemove, 1000))
+
+
+        // 节流
+        // 每隔一段时间执行一次,1000毫秒内只执行一次
+        // 利用lodash库
+        box.addEventListener('mousemove',_.throttle(mousemove,1000))
+
+        // 利用定时器实现
+        function throttle(fn, time) {
+            let timer = null
+            return function () {
+                if (timer) {
+                    return
+                }
+                timer = setTimeout(() => {
+                    fn()
+                    timer = null
+                }, time);
+            }
+        }
+    </script>
+</body>
+
+</html>

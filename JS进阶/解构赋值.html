@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 数组解构，
+        // 将数组中的值快速的赋值给变量
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        const [a, b, c, d, e, f, g, h, i] = arr
+        console.log(a, b, c, d, e, f, g, h, i);
+
+        // 交换两个变量的值
+        () => {
+            let a = 1
+            let b = 2;
+            [a, b] = [b, a]
+            console.log(a, b);
+        }
+
+        // 立即执行函数和数组解构的时候必须加分号
+        // 立即执行函数
+        (function name(params) {
+
+        })();
+        // 使用数组的时候
+        // 分号用于断开
+        const str = 'nide';
+        [1, 2, 3].map(item => {
+            console.log(item);
+        })
+
+        // 剩余参数解决
+        // 1.参数不确定的时候
+        const [aa, bb, ...params] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        console.log(a, b, params);
+
+        // 按需导入值
+        const [aq, bq, , dq] = [1, 2, , 4]
+
+        // 多维数组的结构
+        const [ah, [bh, [ch, dh]]] = [1, [2, [3, 4]]]
+
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

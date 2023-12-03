@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        // find方法
+        // 返回第一个符合条件的元素
+        const a = arr.find((item) => {
+            return item > 5
+        })
+
+        // 创建一个对象数组
+        const arr2 = [{
+            name: '张三',
+            age: 18
+        }, {
+            name: '李四',
+            age: 19
+        }, {
+            name: '王五',
+            age: 20
+        }]
+        // 返回第一个符合条件的元素
+        const b = arr2.find((item) => {
+            return item.age > 19
+        })
+
+        // 简写
+        const c = arr2.find(item => item.age > 19)
+
+
+        // every方法
+        // 检测数组中的每一项是否符合条件
+        // 如果都符合条件，返回true，否则返回false
+        // 只要有一个符合条件，就返回true
+        const d = arr.every(item => item > 0)
+
+        // 声明一个小对象
+        const obj = {
+            name: '张三',
+            age: 18
+        }
+        // 将这个对象中的属性转换为一个数组
+        const e = Object.values(obj).join('/')
+        // 得到的结果是：张三/18
+
+
+        
+
+    </script>
+</body>
+
+</html>

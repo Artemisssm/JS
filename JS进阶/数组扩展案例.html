@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 自己定义数组的扩展方法
+        const arr = [1, 2, 3, 4, 5];
+
+        // 给原型对象添加方法
+        Array.prototype.max = function (params) {
+            return Math.max(...this);
+        }
+
+        console.log(arr.max());
+    </script>
+</body>
+
+</html>

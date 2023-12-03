@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 声明一个对象
+        const obj = {
+            name: '张三',
+            age: 18
+        }
+
+        // 通过对象的属性名获取属性值
+        // 对象解构
+        // 解构的英文名和属性名一致
+        const {name, age} = obj
+        console.log(name, age);
+
+        // 对变量名重新改名
+        const {name: myName, age: myAge} = obj
+
+        // 结构数组对象
+        const arr = [
+            {
+                name: '张三',
+                age: 18
+            },
+            {
+                name: '李四',
+                age: 19
+            }
+        ]
+
+        // 解构数组对象
+        const {boj: {kk, atge}} = arr
+        // 解构的时候看是数组还是对象
+        // 数组用[]
+        // 对象用{}
+    </script>
+</body>
+
+</html>
